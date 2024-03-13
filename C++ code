@@ -1,0 +1,25 @@
+#include <iostream>
+
+// Define the function
+double f(double x) {
+    return x * x + 3 * x + 2;
+}
+
+// Compute the derivative of the function at a given point using forward differencing
+double derivative(double x, double h) {
+    return (f(x + h) - f(x)) / h;
+}
+
+int main() {
+    // Define the point at which to compute the derivative and the step size
+    double x = 2.0;
+    double h = 0.0001;
+
+    // Compute the derivative
+    double der = derivative(x, h);
+
+    // Print the result
+    std::cout << "The derivative of the function f at x = " << x << " is approximately: " << der << std::endl;
+
+    return 0;
+}
